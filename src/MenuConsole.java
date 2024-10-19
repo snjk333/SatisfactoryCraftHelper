@@ -23,7 +23,7 @@ public class MenuConsole implements IMenu {
                     System.out.println("Enter the item name for getting a receipt");
                     String Request = scanner.nextLine();
                     Requests.add(Request);
-                    //бла бла бла находит рецепт, выдает
+                    ReceiptFinder.FindReceipts(Receipts, Request);
                     break;
                 case 0:
                     System.out.println("Goodbye");
