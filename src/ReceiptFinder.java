@@ -15,24 +15,31 @@ public class ReceiptFinder {
     }
 
     public static void FindItemReceipt(List<Receipt> receiptList, ItemMulti item, String soutHelper) {
+        if (item.isPrimitive()) {
+            return;
+        }
+
         List<Receipt> receipts = FindByName(receiptList, item.getItemName());
-        soutHelper = soutHelper + "+";
+        soutHelper += "+";
 
         if (!receipts.isEmpty()) {
             for (Receipt receipt : receipts) {
                 FindFinalReceipt(receiptList, receipt, soutHelper);
             }
-        } else {
-            System.out.println(soutHelper + "Primitive: " + item.getItemName());
         }
     }
 
-    public static void FindFinalReceipt(List<Receipt> receiptList, Receipt receipt, String soutHelper) {
-        System.out.println(soutHelper + "Receipt: " + receipt.getItemName());
 
+
+    public static void FindFinalReceipt(List<Receipt> receiptList, Receipt receipt, String soutHelper) {
+      //  System.out.println(soutHelper + receipt.getItemName());
+        if(receipt.getIngredients()!=null) {
         for (ItemMulti item : receipt.getIngredients()) {
+            if(item!=null) {
             System.out.println(soutHelper + item.getItemName());
             FindItemReceipt(receiptList, item, soutHelper);
+            }
+        }
         }
     }
 

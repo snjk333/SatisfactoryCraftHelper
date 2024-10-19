@@ -16,16 +16,15 @@ public class MenuConsole implements IMenu {
             System.out.println("Choose what do you want to do? ");
             System.out.println("1 - Find a receipt ");
             System.out.println("0 - Exit"+'\n');
-            int Choice = scanner.nextInt();
-            scanner.nextLine();
+            String Choice = scanner.nextLine();
             switch (Choice) {
-                case 1:
+                case "1":
                     System.out.println("Enter the item name for getting a receipt");
                     String Request = scanner.nextLine();
                     Requests.add(Request);
                     ReceiptFinder.FindReceipts(Receipts, Request);
                     break;
-                case 0:
+                case "0":
                     System.out.println("Goodbye");
                     SessionWriter.WriteSession(LocalDate.now(),Requests);
                     Active = false;

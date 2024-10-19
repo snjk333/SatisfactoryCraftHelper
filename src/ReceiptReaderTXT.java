@@ -23,8 +23,13 @@ public class ReceiptReaderTXT implements IReceiptReader {
                     newItem.setPrimitive(false);  // Составной предмет, рецепт
                     do {
                         String[] words = line.split(" ");
-                        newItems.add(new ItemMulti(ItemNameCheck.CheckName(words[1]), Integer.parseInt(words[0])));
-                        line = scanner.nextLine();  // Читаем следующую строку
+                        if (words.length == 2) {
+                            newItems.add(new ItemMulti(ItemNameCheck.CheckName(words[1]), Integer.parseInt(words[0])));
+                        }
+                        else{
+                            newItems.add(new ItemMulti(ItemNameCheck.CheckName(words[0]), 1));
+                        }
+                        line = scanner.nextLine();
                     } while (!line.equals("NEXT"));
                 } else {
                     newItems = null;  // Примитивный предмет
