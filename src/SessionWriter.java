@@ -7,7 +7,7 @@ import java.io.PrintWriter;
 public class SessionWriter {
     public static void WriteSession(LocalDate date, List<String> Logs) {
         try {
-            FileWriter writer = new FileWriter("Session.txt");
+            FileWriter writer = new FileWriter("Session.txt",true);
             PrintWriter printWriter = new PrintWriter(writer);
             printWriter.println(date);
             for (String log : Logs) {

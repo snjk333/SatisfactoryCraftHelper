@@ -29,7 +29,7 @@ public class ReceiptFinder {
         }
     }
 
-
+//откзаться от null, пустые списки лучше, посмотреть про опшион
 
     public static void FindFinalReceipt(List<Receipt> receiptList, Receipt receipt, String soutHelper) {
       //  System.out.println(soutHelper + receipt.getItemName());
@@ -46,11 +46,15 @@ public class ReceiptFinder {
     public static void FindReceipts(List<Receipt> receiptList, String receiptName) {
         List<Receipt> receipts = FindByName(receiptList, receiptName);
         String soutHelper = "+";
-
-        for (Receipt receipt : receipts) {
-            System.out.println("Receipt for: " + receipt.getItemName());
-            FindFinalReceipt(receiptList, receipt, soutHelper);
-            System.out.println();
+        if(!receipts.isEmpty()){
+            for (Receipt receipt : receipts) {
+                System.out.println("Receipt for: " + receipt.getItemName());
+                FindFinalReceipt(receiptList, receipt, soutHelper);
+                System.out.println();
+            }
+            }
+        else{
+            System.out.println("Element don't have receipt: " + receiptName);
         }
     }
 }

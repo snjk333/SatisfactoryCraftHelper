@@ -15,3 +15,4 @@ public class Main {
         menu.display(Receipts, path);
     }
 }
+
