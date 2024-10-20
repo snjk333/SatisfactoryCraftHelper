@@ -9,9 +9,11 @@ public class ReceiptReaderTXT implements IReceiptReader {
 
     @Override
     public void readFile(String path, List<Receipt> receiptsList) {
-        Path pathS = Path.of(path);
+        //Path pathS = Path.of(path);
+        File file = new File(path);
         try {
-            Scanner scanner = new Scanner(Files.createFile(pathS));
+            Scanner scanner = new Scanner(file);
+            //Scanner scanner = new Scanner(Files.createFile(pathS));
             while (scanner.hasNextLine()) {
                 List<ItemMulti> newItems = new ArrayList<>();
                 String line = scanner.nextLine();
