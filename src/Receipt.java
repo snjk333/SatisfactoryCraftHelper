@@ -1,7 +1,6 @@
 import java.util.*;
 public class Receipt extends Item{
-    private List<ItemMulti> Ingredients;
-    public Receipt(){}
+    private final List<ItemMulti> Ingredients;
 
     public Receipt(String itemName, boolean primitive, List<ItemMulti> ingredients) {
         super(itemName, primitive);

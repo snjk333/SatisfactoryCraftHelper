@@ -1,4 +1,5 @@
 import java.io.*;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,10 +9,9 @@ public class ReceiptReaderTXT implements IReceiptReader {
 
     @Override
     public void readFile(String path, List<Receipt> receiptsList) {
-        File file = new File(path);
-        //Path pathS = Path.of(path); idea
+        Path pathS = Path.of(path);
         try {
-            Scanner scanner = new Scanner(file); //Files.createFile(pathS) w skobki
+            Scanner scanner = new Scanner(Files.createFile(pathS));
             while (scanner.hasNextLine()) {
                 List<ItemMulti> newItems = new ArrayList<>();
                 String line = scanner.nextLine();
