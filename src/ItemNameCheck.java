@@ -1,5 +1,5 @@
 public class ItemNameCheck {
     static String CheckName(String name){
-        return name.toUpperCase();
+        return name.toUpperCase().replace(" ","");
     }
 }

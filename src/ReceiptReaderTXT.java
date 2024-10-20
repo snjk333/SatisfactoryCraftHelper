@@ -26,7 +26,7 @@ public class ReceiptReaderTXT implements IReceiptReader {
                 if (!line.equals("NEXT")) {
                     newItem.setPrimitive(false);  // Составной предмет, рецепт
                     do {
-                        String[] words = line.split(" "); //лучше через запятую
+                        String[] words = line.split(","); //лучше через запятую
                         if (words.length == 2) {
                             newItems.add(new ItemMulti(ItemNameCheck.CheckName(words[1]), Integer.parseInt(words[0])));
                         }
