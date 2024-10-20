@@ -36,7 +36,6 @@ public class ReceiptReaderTXT implements IReceiptReader {
                         line = scanner.nextLine();
                     } while (!line.equals("NEXT"));
                 } else {
-                    newItems = null;  // Примитивный предмет
                     newItem.setPrimitive(true);
                 }
 

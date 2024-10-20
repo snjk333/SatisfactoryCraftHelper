@@ -34,12 +34,12 @@ public class ReceiptFinder {
     public static void FindFinalReceipt(List<Receipt> receiptList, Receipt receipt, String soutHelper) {
       //  System.out.println(soutHelper + receipt.getItemName());
         if(receipt.getIngredients()!=null) {
-        for (ItemMulti item : receipt.getIngredients()) {
-            if(item!=null) {
-            System.out.println(soutHelper + item.getItemName());
-            FindItemReceipt(receiptList, item, soutHelper);
+            for (ItemMulti item : receipt.getIngredients()) {
+                if(item!=null) {
+                System.out.println(soutHelper + item.getItemName());
+                FindItemReceipt(receiptList, item, soutHelper);
+                }
             }
-        }
         }
     }
 
