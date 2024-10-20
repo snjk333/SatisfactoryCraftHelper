@@ -18,12 +18,15 @@ public class ReceiptFinder {
         if (item.isPrimitive()) {
             return;
         }
-
+        //У того айтема есть кол-во, нам нужно воссоздать его тем элементам
         List<Receipt> receipts = FindByName(receiptList, item.getItemName());
         soutHelper += "+";
 
         if (!receipts.isEmpty()) {
             for (Receipt receipt : receipts) {
+                for(ItemMulti itemMulti : receipt.getIngredients()){
+                    itemMulti.MultipleCount(item.getCount());
+                }
                 FindFinalReceipt(receiptList, receipt, soutHelper);
             }
         }
@@ -36,7 +39,7 @@ public class ReceiptFinder {
         if(receipt.getIngredients()!=null) {
             for (ItemMulti item : receipt.getIngredients()) {
                 if(item!=null) {
-                System.out.println(soutHelper + item.getItemName());
+                System.out.println(soutHelper +item.getCount() + " " + item.getItemName());
                 FindItemReceipt(receiptList, item, soutHelper);
                 }
             }
