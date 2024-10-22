@@ -60,4 +60,32 @@ public class ReceiptFinder {
             System.out.println("Element don't have receipt: " + receiptName);
         }
     }
+
+    public static List<String> FindByIngredient(List<Receipt> receiptList, String ingridientName){
+        List<String> Variants = new ArrayList<>();
+        for(Receipt receipt : receiptList){
+            if(receipt.getIngredients()!=null) {
+                for (ItemMulti item : receipt.getIngredients()) {
+                    if(item!=null) {
+                        if(item.getItemName().equalsIgnoreCase(ingridientName)&&(!Variants.contains(receipt.getItemName()))) {
+                            Variants.add(receipt.getItemName());
+                        }
+                    }
+                }
+            }
+        }
+        return Variants;
+    }
+
+    public static void FindReceiptsByIngredient(List<Receipt> receiptList, String ingridientName) {
+        List<String> Variants = FindByIngredient(receiptList, ingridientName);
+        if(!Variants.isEmpty()){
+            for (String Variant : Variants) {
+                System.out.println("From this ingridient u can cook: " + Variant);
+            }
+        }
+        else{
+            System.out.println("I dont know what u can cook from: " + ingridientName);
+        }
+    }
 }

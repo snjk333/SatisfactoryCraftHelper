@@ -5,17 +5,16 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 public class SessionWriter {
-    public static void WriteSession(LocalDate date, List<String> Logs) {
-        try {
+    public static void WriteSession(LocalDate date, List<String> LogsReceipts, List<String> LogsIngredients) throws IOException {
             FileWriter writer = new FileWriter("Session.txt",true);
             PrintWriter printWriter = new PrintWriter(writer);
             printWriter.println(date);
-            for (String log : Logs) {
-                printWriter.println(log);
+            for (String log : LogsReceipts) {
+                printWriter.println("Receipt Log: " + log);
+            }
+            for (String log : LogsIngredients) {
+                printWriter.println("Ingredient Log: " + log);
             }
             printWriter.close();  // Закрываем PrintWriter
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 }

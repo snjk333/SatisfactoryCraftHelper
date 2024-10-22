@@ -1,5 +1,6 @@
+import java.io.IOException;
 import java.util.List;
 
 public interface IMenu {
-        void display(List<Receipt> Receipts, String DataBase);
+        void display(List<Receipt> Receipts, String DataBase) throws IOException;
 }

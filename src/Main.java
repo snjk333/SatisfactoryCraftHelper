@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.*;
 import java.util.List;
 import java.io.File;
@@ -9,10 +10,10 @@ public class Main {
     // чтобы найти путь к файлу в любой системе. Потому что в Windows путь \\,
     // а в Unix системах путь идет через // (Добавил по приколу, всё равно путь вряд-ли 1в1 будет)
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         List<Receipt> Receipts = new ArrayList<>();
         IMenu menu = new MenuConsole();
-        menu.display(Receipts, path);
+        menu.display(Receipts, Base);
     }
 }
 
