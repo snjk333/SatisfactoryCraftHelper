@@ -1,20 +1,14 @@
 import java.util.*;
-public class Receipt extends Item{
+public class Receipt{
     private final List<ItemMulti> Ingredients;
-
-    public Receipt(String itemName, boolean primitive, List<ItemMulti> ingredients) {
-        super(itemName, primitive);
-        Ingredients = ingredients;
-    }
-
-    public Receipt(String itemName, List<ItemMulti> ingredients) {
-        super(itemName);
-        Ingredients = ingredients;
-    }
+    private final Item item;
 
     public Receipt(Item item, List<ItemMulti> ingredients) {
-        super(item);
+        this.item = item;
         Ingredients = ingredients;
+    }
+    public Item getItem() {
+        return item;
     }
     public List<ItemMulti> getIngredients() {
         return Ingredients;

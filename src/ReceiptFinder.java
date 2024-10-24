@@ -7,7 +7,7 @@ public class ReceiptFinder {
         List<Receipt> Receipts = new ArrayList<>();
 
         for (Receipt receipt : receiptList) {
-            if (receipt.getItemName().equalsIgnoreCase(receiptName)) {
+            if (receipt.getItem().getItemName().equalsIgnoreCase(receiptName)) {
                 Receipts.add(receipt);
             }
         }
@@ -51,7 +51,7 @@ public class ReceiptFinder {
         String soutHelper = "+";
         if(!receipts.isEmpty()){
             for (Receipt receipt : receipts) {
-                System.out.println("Receipt for: " + receipt.getItemName());
+                System.out.println("Receipt for: " + receipt.getItem().getItemName());
                 FindFinalReceipt(receiptList, receipt, soutHelper);
                 System.out.println();
             }
@@ -67,8 +67,8 @@ public class ReceiptFinder {
             if(receipt.getIngredients()!=null) {
                 for (ItemMulti item : receipt.getIngredients()) {
                     if(item!=null) {
-                        if(item.getItemName().equalsIgnoreCase(ingridientName)&&(!Variants.contains(receipt.getItemName()))) {
-                            Variants.add(receipt.getItemName());
+                        if(item.getItemName().equalsIgnoreCase(ingridientName)&&(!Variants.contains(receipt.getItem().getItemName()))) {
+                            Variants.add(receipt.getItem().getItemName());
                         }
                     }
                 }
