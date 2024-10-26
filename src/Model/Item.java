@@ -1,19 +1,20 @@
+package Model;
+
 public class Item {
-    private String itemName;
+    private final String itemName;
     private boolean primitive = false;
 
-    public Item(String itemName, boolean primitive) {
-        this.itemName = itemName;
-        this.primitive = primitive;
-    }
-    public Item() {
-    }
+
     public Item(String itemName) {
         this.itemName = itemName;
     }
+    public Item(String itemName, boolean primitive) {
+        this(itemName);
+        setPrimitive(primitive);
+    }
     public Item(Item item) {
-        this.itemName = item.getItemName();
-        this.primitive = item.isPrimitive();
+        this.itemName = item.itemName; // Явное копирование поля
+        this.primitive = item.primitive; // Явное копирование поля
     }
 
     public String getItemName() {

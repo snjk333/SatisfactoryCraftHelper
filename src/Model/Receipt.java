@@ -1,3 +1,5 @@
+package Model;
+
 import java.util.*;
 public class Receipt{
     private final List<ItemMulti> Ingredients;

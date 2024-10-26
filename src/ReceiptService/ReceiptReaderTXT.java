@@ -1,6 +1,10 @@
+package ReceiptService;
+
+import Model.Item;
+import Model.ItemMulti;
+import Model.Receipt;
+import Validator.ItemNameCheck;
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;

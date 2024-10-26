@@ -1,3 +1,8 @@
+package ReceiptService;
+
+import Model.ItemMulti;
+import Model.Receipt;
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -36,7 +41,7 @@ public class ReceiptFinder {
 
     public static void FindFinalReceipt(List<Receipt> receiptList, Receipt receipt, String soutHelper) {
       //  System.out.println(soutHelper + receipt.getItemName());
-        if(receipt.getIngredients()!=null) {
+        if(!receipt.getIngredients().isEmpty()) {
             for (ItemMulti item : receipt.getIngredients()) {
                 if(item!=null) {
                 System.out.println(soutHelper +item.getCount() + " " + item.getItemName());

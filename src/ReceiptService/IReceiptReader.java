@@ -1,3 +1,7 @@
+package ReceiptService;
+
+import Model.Receipt;
+
 import java.util.*;
 
 public interface IReceiptReader {

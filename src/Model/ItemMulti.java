@@ -1,33 +1,32 @@
+package Model;
+
 public class ItemMulti extends Item{
     private int count;
 
+    // Основной конструктор
     public ItemMulti(String itemName, boolean primitive, int count) {
         super(itemName, primitive);
         this.count = count;
     }
 
     public ItemMulti(Item item, int count) {
-        super(item);
-        this.count = count;
+        this(item.getItemName(), item.isPrimitive(), count);
     }
 
     public ItemMulti(String itemName, int count) {
-        super(itemName);
-        this.count = count;
+        this(itemName, false, count); // По умолчанию primitive = false
     }
+
     public ItemMulti(String itemName, boolean primitive) {
-        super(itemName, primitive);
-        this.count = 1;
+        this(itemName, primitive, 1);
     }
 
     public ItemMulti(Item item) {
-        super(item);
-        this.count = 1;
+        this(item.getItemName(), item.isPrimitive(), 1);
     }
 
     public ItemMulti(String itemName) {
-        super(itemName);
-        this.count = 1;
+        this(itemName, false, 1);
     }
 
     public int getCount() {

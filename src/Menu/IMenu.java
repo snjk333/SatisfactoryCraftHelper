@@ -1,3 +1,7 @@
+package Menu;
+
+import Model.Receipt;
+
 import java.io.IOException;
 import java.util.List;
 

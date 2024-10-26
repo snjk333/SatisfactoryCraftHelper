@@ -1,3 +1,5 @@
+package Session;
+
 import java.time.LocalDate;
 import java.util.List;
 import java.io.FileWriter;
@@ -10,7 +12,7 @@ public class SessionWriter {
             PrintWriter printWriter = new PrintWriter(writer);
             printWriter.println(date);
             for (String log : LogsReceipts) {
-                printWriter.println("Receipt Log: " + log);
+                printWriter.println("Model.Receipt Log: " + log);
             }
             for (String log : LogsIngredients) {
                 printWriter.println("Ingredient Log: " + log);
