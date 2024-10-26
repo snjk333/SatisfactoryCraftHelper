@@ -13,5 +13,5 @@ public class Receipt{
     public List<ItemMulti> getIngredients() {
         return Ingredients;
     }
-
+  //
 }
